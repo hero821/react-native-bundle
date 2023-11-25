@@ -71,6 +71,11 @@ function App(): JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
+        <Text style={[
+          {
+            color: 'red', textAlign: 'center', margin: 10, fontSize: 60
+          }
+        ]}>BModel</Text>
         <Header />
         <View
           style={{
