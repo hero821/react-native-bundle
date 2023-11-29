@@ -32,7 +32,7 @@ import okhttp3.Response;
 
 public class MainActivity extends Activity {
     public static final String TAG = MainActivity.class.getSimpleName();
-    public static final String URL = "http://192.168.3.58:8080";
+    public static final String URL = "http://192.168.128.1:8080";
     private LinearLayout linearLayout;
 
     @Override

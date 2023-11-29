@@ -2,11 +2,14 @@ package com.host;
 
 import androidx.annotation.NonNull;
 
+import com.facebook.hermes.reactexecutor.HermesExecutor;
+import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
+import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 
 import java.util.List;
@@ -51,6 +54,13 @@ public class DispatchDelegate extends ReactActivityDelegate {
             @Override
             protected String getJSMainModuleName() {
                 return "index";
+            }
+
+            @NonNull
+            @Override
+            protected JavaScriptExecutorFactory getJavaScriptExecutorFactory() {
+                HermesExecutor.loadLibrary();
+                return new HermesExecutorFactory();
             }
         };
     }
